@@ -48,7 +48,7 @@ public class LoginTest {
         //Username too long and no underscore
         badUsernameLogin = new Login(
         "Kyle", "Robertson",
-        "kyle!!!!!!!", // ussrname
+        "kyle!!!!!!!", // Bad ussrname
         "Ch&&sec@ke99!",
         "+2734657869"        
         );
@@ -57,7 +57,7 @@ public class LoginTest {
         badPasswordLogin = new Login(
         "Kyle", "Robertson",
         "Kyl_1",
-        "password",  //password
+        "password",  // Bad password
         "+27768756457"
         );        
                 
