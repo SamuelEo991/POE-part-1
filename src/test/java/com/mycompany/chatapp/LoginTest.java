@@ -113,7 +113,7 @@ assertFalse(badUsernameLogin.checkUsername());
 // Password: "Ch&&sec@ke99!" should say "Password succesfully captured"
 
 @Test
-void testPassword() {
+void testPassword_assertTrue() {
 // registerUser only reaches password when it is correct
 // Test the complexity flag and build message 
 Login user = new Login("Kyle", "Robertson", "Kyl_1", "Ch&&sec@ke99!", "+27768756457");
@@ -154,7 +154,7 @@ assertFalse(badPasswordLogin.checkPasswordComplexity());
 //Phone Number: "+27768756457" must give "Cell number successfully captured"
 
 @Test
-void testPhoneNumber() {
+void testPhoneNumber_assertEquals() {
 Login user = new Login("Kyle", "Robertson", "Kyl_1", "Ch&&sec@ke99!", "0768756457");
 assertEquals(
         "Phone number is incorrectly formatted or does not contain "
