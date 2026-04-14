@@ -85,7 +85,7 @@ public class LoginTest {
      * Username: "kyle!!!!!!!" will return a error message
      */
  @Test   
-void testUsernameCorrectlyFormatted_assertEquals() {
+void testUsernameFormat_assertEquals() {
 assertEquals(
 "Username is not correctly formatted. Please ensure that your "
 + "Username conatains an underscore and is no more than five "
@@ -97,13 +97,13 @@ assertEquals(
 
 //Username correctly formatted
 @Test
-void testUsernameCorrectlyFormatted_assertTrue() {
+void testUsernameFormat_assertTrue() {
 assertTrue(ValidUser.checkUsername());
 }
 
 // Username incorrectly formatted
 @Test
-void testUsernameIncorrectlyFormatted_assertFalse() {
+void testUsernameFormat_assertFalse() {
 assertFalse(badUsernameLogin.checkUsername());
 
 }
@@ -113,7 +113,7 @@ assertFalse(badUsernameLogin.checkUsername());
 // Password: "Ch&&sec@ke99!" should say "Password succesfully captured"
 
 @Test
-void testPassword_assertTrue() {
+void testPasswordFormat_assertTrue() {
 // registerUser only reaches password when it is correct
 // Test the complexity flag and build message 
 Login user = new Login("Kyle", "Robertson", "Kyl_1", "Ch&&sec@ke99!", "+27768756457");
@@ -124,10 +124,10 @@ assertFalse(user.registerUser().contains("Password is not correctly formatted"))
 
 }
 
-// Password "password" should say "Password is not correctly formatted"
+// Password: "password" should say "Password is not correctly formatted"
 
 @Test
-void testPassword_assertEquals() {
+void testPasswordFormat_assertEquals() {
 assertEquals(
 "Password is not correctly formatted. Please ensure that the "
         + "Password contains at least 8 characters, a special "
@@ -151,10 +151,10 @@ assertFalse(badPasswordLogin.checkPasswordComplexity());
 
 //Phone Number Test
 
-//Phone Number: "+27768756457" must give "Cell number successfully captured"
+//Phone Number: "+27768756457" should give "Cell number successfully captured"
 
 @Test
-void testPhoneNumber_assertEquals() {
+void testPhoneNumberFormat_assertEquals() {
 Login user = new Login("Kyle", "Robertson", "Kyl_1", "Ch&&sec@ke99!", "0768756457");
 assertEquals(
         "Phone number is incorrectly formatted or does not contain "
@@ -166,13 +166,13 @@ assertEquals(
 
 //Number: Correctly formatted = assertTrue
 @Test
-void testPhoneNumber_assertTrue() {
+void testPhoneNumberFormat_assertTrue() {
 assertTrue(ValidUser.checkPhoneNumber());
 }
 
 // Number: Incorrectly formatted = assertFalse
 @Test
-void testPhoneNumber_assertFalse() {
+void testPhoneNumberFormat_assertFalse() {
 assertFalse(badCellLogin.checkPhoneNumber());
 }
 
@@ -180,13 +180,13 @@ assertFalse(badCellLogin.checkPhoneNumber());
 
 // Login: Correct credentials = assertTrue
 @Test
-void testLogin_assertTrue() {
+void testLoginCorrectCredentials_assertTrue() {
 assertTrue(ValidUser.LoginUser("Kyl_1", "Ch&&sec@ke99!"));
 }
 
 // Login: Incorrect credentials = assertFalse
 @Test
-void testLogin_assertFalse() {
+void testLoginIncorrectCredentials_assertFalse() {
 assertFalse(ValidUser.LoginUser("WrongUser", "WrongPass"));
 } 
 }
